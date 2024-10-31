@@ -6,6 +6,14 @@ import plotly.graph_objects as go
 import plotly.express as px
 from sklearn.preprocessing import MinMaxScaler
 
+import pickle
+
+# Laster inn modellen
+model_path = "wine_quality_model.pkl"  # Tilpass banen om nødvendig
+with open(model_path, "rb") as file:
+    model = pickle.load(file)
+
+
 # Sett page config med wide layout for bedre visualiseringer
 st.set_page_config(
     page_title="Avansert Vin Kvalitetsvurdering",
@@ -43,6 +51,8 @@ ideal_ranges = {
     "sulphates": {"min": 0.5, "max": 0.8, "ideal": 0.65, "unit": "g/L"},
     "alcohol": {"min": 11.0, "max": 13.0, "ideal": 12.0, "unit": "%"}
 }
+
+model = pickle.load(open("wine_quality_model.pkl", "rb"))
 
 # Last inn modellen med caching
 @st.cache_resource
