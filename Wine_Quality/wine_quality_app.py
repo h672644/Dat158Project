@@ -8,11 +8,6 @@ from sklearn.preprocessing import MinMaxScaler
 
 import pickle
 
-# Laster inn modellen
-model_path = "wine_quality_model.pkl"  # Tilpass banen om nødvendig
-with open(model_path, "rb") as file:
-    model = pickle.load(file)
-
 
 # Sett page config med wide layout for bedre visualiseringer
 st.set_page_config(
