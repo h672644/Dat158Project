@@ -220,3 +220,17 @@ if st.button('Analyser vin', type='primary'):
             
     except Exception as e:
         st.error(f"En feil oppstod under analyse: {str(e)}")
+
+
+
+
+        import pickle
+
+# Sørg for at 'model' er trent før du prøver å lagre den
+try:
+    # Lagre modellen i en fil kalt 'model.pkl'
+    with open('model.pkl', 'wb') as file:
+        pickle.dump(model, file)
+    print("Modellen er lagret som 'model.pkl'")
+except NameError:
+    print("Feil: 'model' er ikke definert. Pass på at modellen er trent før du lagrer.")
