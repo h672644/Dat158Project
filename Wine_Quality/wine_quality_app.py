@@ -3,6 +3,13 @@ import joblib
 import numpy as np
 import pandas as pd
 
+
+
+
+import joblib
+model = joblib.load('Wine_Quality/wine_quality_model.pkl')
+print("Modellen ble lastet inn.")
+
 # Sett page config
 st.set_page_config(page_title="Vin Kvalitetsvurdering", page_icon="🍷")
 
